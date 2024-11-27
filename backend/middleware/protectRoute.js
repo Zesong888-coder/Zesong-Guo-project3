@@ -9,11 +9,11 @@ export const protectRoute = async (req, res, next) => {
         }
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        console.log("Decoded token:", decoded);
+
         if (!decoded) {
             return res.status(401).json({ error: "Unauthorized: Invalid Token" });
         }
-        console.log(`${decoded.id}`);
+
         const user = await User.findById(decoded.id).select("-password"); // exclude password
         if (!user) {
             console.log(`${user}`);
