@@ -79,7 +79,7 @@ const CreatePost = () => {
 				{img && (
 					<div className='relative w-72 mx-auto'>
 						<IoCloseSharp
-							className='absolute top-0 right-0 text-black bg-gray-800 rounded-full w-5 h-5 cursor-pointer'
+							className='absolute top-0 right-0 text-white bg-gray-800 rounded-full w-5 h-5 cursor-pointer'
 							onClick={() => {
 								setImg(null);
 								imgRef.current.value = null;
@@ -98,7 +98,7 @@ const CreatePost = () => {
 						<BsEmojiSmileFill className='fill-primary w-5 h-5 cursor-pointer' />
 					</div>
 					<input type='file' accept='image/*' hidden ref={imgRef} onChange={handleImgChange} />
-					<button className='btn bg-gray-900 rounded-full btn-sm text-white px-4'>
+					<button className='btn btn-primary rounded-full btn-sm text-white px-4'>
 						{isPending ? "Posting..." : "Post"}
 					</button>
 				</div>
